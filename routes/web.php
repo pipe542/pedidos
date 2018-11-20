@@ -9,12 +9,13 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+ */
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/nueva', 'BebidasController@create');
+Route::post('/nueva_bebida', 'BebidasController@store');
+Route::get('/nuevo', 'PlatosController@create');
+Route::post('/nuevo_plato', 'PlatosController@store');

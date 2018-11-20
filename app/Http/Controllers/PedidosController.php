@@ -14,7 +14,8 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = pedidos::all();
+
     }
 
     /**
@@ -24,7 +25,7 @@ class PedidosController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.cargar_fruta');
     }
 
     /**
@@ -35,7 +36,9 @@ class PedidosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pedido = $request->all();
+        pedidos::create($pedido);
+        return redirect('home');
     }
 
     /**

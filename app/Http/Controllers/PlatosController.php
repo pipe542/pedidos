@@ -24,7 +24,7 @@ class PlatosController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.agregar_plato');
     }
 
     /**
@@ -35,7 +35,10 @@ class PlatosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data            = $request->all();
+        $data['id_user'] = $request->user()->id;
+        platos::create($data);
+        return redirect('home');
     }
 
     /**
