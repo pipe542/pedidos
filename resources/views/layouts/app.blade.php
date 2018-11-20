@@ -10,8 +10,8 @@
                             {{ config('app.name', 'Laravel') }}
                         </title>
                         <!-- Styles -->
-                        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
-                            <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+                        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+                            <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
                             </link>
                         </link>
                     </meta>
@@ -62,6 +62,11 @@
                             @else
                             <li class="dropdown">
                                 <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" v-pre="">
+                                    HACER PEDIDOS
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" v-pre="">
                                     {{ Auth::user()->name }}
                                     <span class="caret">
                                     </span>
@@ -83,16 +88,10 @@
                     </div>
                 </div>
             </nav>
-            @yield('content')
         </div>
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}">
-        </script>
-        <script crossorigin="anonymous" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
-        </script>
-        <script crossorigin="anonymous" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
-        </script>
-        <script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
-        </script>
     </body>
 </html>
+@yield('content')
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}">
+</script>
