@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\bebidas;
 use App\pedidos;
+use App\platos;
 use Illuminate\Http\Request;
 
 class PedidosController extends Controller
@@ -14,7 +16,9 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        $pedidos = pedidos::all();
+        $platos  = platos::all();
+        $bebidas = bebidas::all();
+        return view('user.pedidos', compact('platos', 'bebidas'));
 
     }
 

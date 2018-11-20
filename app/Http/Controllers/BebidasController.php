@@ -35,8 +35,9 @@ class BebidasController extends Controller
  */
     public function store(Request $request)
     {
-        $bebida = $request->all();
-        bebidas::create($bebida);
+        $data            = $request->all();
+        $data['id_user'] = $request->user()->id;
+        bebidas::create($data);
         return redirect('home');
     }
 

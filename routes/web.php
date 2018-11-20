@@ -18,6 +18,4 @@ Route::get('/nueva', 'BebidasController@create');
 Route::post('/nueva_bebida', 'BebidasController@store');
 Route::get('/nuevo', 'PlatosController@create');
 Route::post('/nuevo_plato', 'PlatosController@store');
-Route::get('/pedidos', function () {
-    return view('user.pedidos');
-});
+Route::get('pedidos', 'PedidosController@index');
