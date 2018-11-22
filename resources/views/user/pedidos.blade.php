@@ -16,17 +16,18 @@
                         <br>
                             <br>
                                 <div class="col-md-5 col-md-offset-4 ">
-                                    <form action="" method="post">
+                                    <form action="{{ url('nuevo_pedido') }}" method="post">
+                                        {{ csrf_field() }}
                                         <br>
                                             <label>
                                                 Plato:
                                             </label>
-                                            <select class="custom-select col-md-7 form-control" name="plato">
+                                            <select class="custom-select col-md-7 form-control" name="plato_id">
                                                 <option selected="">
                                                     Selecione un plato:
                                                 </option>
                                                 @foreach ($platos as $plato)
-                                                <option value="{{ $plato->nombre }}">
+                                                <option value="{{ $plato->id }}">
                                                     {{ $plato->nombre }}
                                                 </option>
                                                 @endforeach
@@ -37,12 +38,12 @@
                                                         <label>
                                                             Bebidas:
                                                         </label>
-                                                        <select class="custom-select col-md-7 form-control" name="bebidas">
+                                                        <select class="custom-select col-md-7 form-control" name="bebida_id">
                                                             <option selected="">
                                                                 Selecione una bebida:
                                                             </option>
                                                             @foreach ($bebidas as $bebida)
-                                                            <option value="{{ $bebida->nombre }}">
+                                                            <option value="{{ $bebida->id }}">
                                                                 {{ $bebida->nombre }}
                                                             </option>
                                                             @endforeach
@@ -50,6 +51,9 @@
                                                     </br>
                                                 </br>
                                             </br>
+                                            <button class="btn btn-primary" type="submit">
+                                                Pedir
+                                            </button>
                                         </br>
                                     </form>
                                     <br>

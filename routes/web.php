@@ -19,3 +19,5 @@ Route::post('/nueva_bebida', 'BebidasController@store');
 Route::get('/nuevo', 'PlatosController@create');
 Route::post('/nuevo_plato', 'PlatosController@store');
 Route::get('pedidos', 'PedidosController@index');
+Route::post('/nuevo_pedido', 'PedidosController@store');
+Route::get('ver', 'PedidosController@todos_pedidos');

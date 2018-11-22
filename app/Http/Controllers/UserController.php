@@ -2,25 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\bebidas;
-use App\pedidos;
-use App\platos;
-use App\User;
 use Illuminate\Http\Request;
 
-class PedidosController extends Controller
+class UserController extends Controller
 {
-
-    public function todos_pedidos()
-    {
-
-        $pedidos  = pedidos::all();
-        $usuarios = User::all();
-        $platos   = platos::all();
-        $bebidas  = bebidas::all();
-        return view('admin.ver_pedidos', compact('pedidos', 'usuarios', 'platos', 'bebidas'));
-
-    }
 
     /**
      * Display a listing of the resource.
@@ -29,9 +14,6 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        $platos  = platos::all();
-        $bebidas = bebidas::all();
-        return view('user.pedidos', compact('platos', 'bebidas'));
 
     }
 
@@ -42,7 +24,7 @@ class PedidosController extends Controller
      */
     public function create()
     {
-        return redirect('home');
+        //
     }
 
     /**
@@ -53,19 +35,16 @@ class PedidosController extends Controller
      */
     public function store(Request $request)
     {
-        $data            = $request->all();
-        $data['user_id'] = $request->user()->id;
-        pedidos::create($data);
-        return redirect('home');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\pedidos  $pedidos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(pedidos $pedidos)
+    public function show($id)
     {
         //
     }
@@ -73,10 +52,10 @@ class PedidosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\pedidos  $pedidos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(pedidos $pedidos)
+    public function edit($id)
     {
         //
     }
@@ -85,10 +64,10 @@ class PedidosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\pedidos  $pedidos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pedidos $pedidos)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -96,10 +75,10 @@ class PedidosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\pedidos  $pedidos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pedidos $pedidos)
+    public function destroy($id)
     {
         //
     }

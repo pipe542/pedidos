@@ -12,7 +12,7 @@ class pedidos extends Model
      * @var array
      */
     protected $fillable = [
-        'id_platos', 'id_bebidas','id_users',
+        'plato_id', 'bebida_id', 'user_id',
     ];
 
     /**
@@ -21,7 +21,7 @@ class pedidos extends Model
      * @var array
      */
     protected $hidden = [
-    	
+
     ];
 
 }

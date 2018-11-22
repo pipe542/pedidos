@@ -60,10 +60,34 @@
                                 </a>
                             </li>
                             @else
+                            <li>
+                                <a href="{{ url('pedidos') }}">
+                                    Hacer pedido
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('ver') }}">
+                                    ver pedidos
+                                </a>
+                            </li>
                             <li class="dropdown">
                                 <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" v-pre="">
-                                    HACER PEDIDOS
+                                    agregar menu
+                                    <span class="caret">
+                                    </span>
                                 </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ url('nuevo') }}">
+                                            Agregar plato
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('nueva') }}">
+                                            Agregar bebida
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="dropdown">
                                 <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" v-pre="">
@@ -75,7 +99,7 @@
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Salir
                                         </a>
                                         <form action="{{ route('logout') }}" id="logout-form" method="POST" style="display: none;">
                                             {{ csrf_field() }}
