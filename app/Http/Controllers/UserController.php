@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\platos;
 use Illuminate\Http\Request;
 
-class PlatosController extends Controller
+class UserController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +14,7 @@ class PlatosController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -24,7 +24,7 @@ class PlatosController extends Controller
      */
     public function create()
     {
-        return view('admin.agregar_plato');
+        //
     }
 
     /**
@@ -35,19 +35,16 @@ class PlatosController extends Controller
      */
     public function store(Request $request)
     {
-        $data            = $request->all();
-        $data['id_user'] = $request->user()->id;
-        platos::create($data);
-        return redirect('home');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\platos  $platos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(platos $platos)
+    public function show($id)
     {
         //
     }
@@ -55,10 +52,10 @@ class PlatosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\platos  $platos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(platos $platos)
+    public function edit($id)
     {
         //
     }
@@ -67,10 +64,10 @@ class PlatosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\platos  $platos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, platos $platos)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,10 +75,10 @@ class PlatosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\platos  $platos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(platos $platos)
+    public function destroy($id)
     {
         //
     }

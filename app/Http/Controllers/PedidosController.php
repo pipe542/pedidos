@@ -2,11 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\bebidas;
 use App\pedidos;
+use App\platos;
+use App\User;
 use Illuminate\Http\Request;
 
 class PedidosController extends Controller
 {
+
+    public function todos_pedidos()
+    {
+
+        $pedidos  = pedidos::all();
+        $usuarios = User::all();
+        $platos   = platos::all();
+        $bebidas  = bebidas::all();
+        return view('admin.ver_pedidos', compact('pedidos', 'usuarios', 'platos', 'bebidas'));
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +29,10 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        //
+        $platos  = platos::all();
+        $bebidas = bebidas::all();
+        return view('user.pedidos', compact('platos', 'bebidas'));
+
     }
 
     /**
@@ -24,7 +42,7 @@ class PedidosController extends Controller
      */
     public function create()
     {
-        //
+        return redirect('home');
     }
 
     /**
@@ -35,7 +53,10 @@ class PedidosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data            = $request->all();
+        $data['user_id'] = $request->user()->id;
+        pedidos::create($data);
+        return redirect('home');
     }
 
     /**
