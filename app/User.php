@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'tipo',
     ];
 
     /**
@@ -50,7 +50,8 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    function () {
+    public function cliente()
+    {
         // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
         return $this->belongsTo(Cliente::class, 'user_id');
     }
@@ -60,7 +61,8 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    function () {
+    public function restaurante()
+    {
         // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
         return $this->belongsTo(Restaurante::class, 'user_id');
     }
