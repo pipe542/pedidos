@@ -23,3 +23,6 @@ Route::post('/nuevo_plato', 'PlatosController@store');
 Route::get('pedidos', 'PedidosController@index');
 Route::post('/nuevo_pedido', 'PedidosController@store');
 Route::get('ver', 'PedidosController@todos_pedidos');
+Route::get('register1', function () {
+    return view('auth.registrar_restaurante');
+});
