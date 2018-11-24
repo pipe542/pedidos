@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -15,24 +16,27 @@
                         <br>
                             <br>
                                 <div class="col-md-5 col-md-offset-4 ">
+
                                     <form action="" method="post">
+
+                                    <form action="{{ url('nuevo_pedido') }}" method="post">
+                                        {{ csrf_field() }}
+
                                         <br>
                                             <label>
                                                 Plato:
                                             </label>
-                                            <select class="custom-select col-md-7 form-control" name="plato">
+
+                                            <select class="custom-select col-md-7 form-control" name="plato_id">
                                                 <option selected="">
                                                     Selecione un plato:
                                                 </option>
-                                                <option value="Arroz">
-                                                    Arroz
+                                                @foreach ($platos as $plato)
+                                                <option value="{{ $plato->id }}">
+                                                    {{ $plato->nombre }}
                                                 </option>
-                                                <option value="Chorizo">
-                                                    Chorizo
-                                                </option>
-                                                <option value="Sancocho">
-                                                    Sancocho
-                                                </option>
+                                                @endforeach
+
                                             </select>
                                             <br>
                                                 <br>
@@ -40,23 +44,24 @@
                                                         <label>
                                                             Bebidas:
                                                         </label>
-                                                        <select class="custom-select col-md-7 form-control" name="bebidas">
+
+                                                        <select class="custom-select col-md-7 form-control" name="bebida_id">
                                                             <option selected="">
                                                                 Selecione una bebida:
                                                             </option>
-                                                            <option value="Pepsi">
-                                                                Pepsi
+                                                            @foreach ($bebidas as $bebida)
+                                                            <option value="{{ $bebida->id }}">
+                                                                {{ $bebida->nombre }}
                                                             </option>
-                                                            <option value="Colombiana">
-                                                                Colombiana
-                                                            </option>
-                                                            <option value="Postobom">
-                                                                Postobom
-                                                            </option>
+                                                            @endforeach
                                                         </select>
                                                     </br>
                                                 </br>
                                             </br>
+
+                                            <button class="btn btn-primary" type="submit">
+                                                Pedir
+                                            </button>
                                         </br>
                                     </form>
                                     <br>

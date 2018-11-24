@@ -12,7 +12,7 @@ class platos extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'precio',
+        'nombre', 'precio',
     ];
 
     /**

@@ -14,7 +14,7 @@ class BebidasController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -24,60 +24,63 @@ class BebidasController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.agregar_bebida');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+/**
+ * Store a newly created resource in storage.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return \Illuminate\Http\Response
+ */
     public function store(Request $request)
     {
-        //
+        $data            = $request->all();
+        $data['id_user'] = $request->user()->id;
+        bebidas::create($data);
+        return redirect('home');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\bebidas  $bebidas
-     * @return \Illuminate\Http\Response
-     */
+/**
+ * Display the specified resource.
+ *
+ * @param  \App\bebidas  $bebidas
+ * @return \Illuminate\Http\Response
+ */
     public function show(bebidas $bebidas)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\bebidas  $bebidas
-     * @return \Illuminate\Http\Response
-     */
+/**
+ * Show the form for editing the specified resource.
+ *
+ * @param  \App\bebidas  $bebidas
+ * @return \Illuminate\Http\Response
+ */
     public function edit(bebidas $bebidas)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\bebidas  $bebidas
-     * @return \Illuminate\Http\Response
-     */
+/**
+ * Update the specified resource in storage.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  \App\bebidas  $bebidas
+ * @return \Illuminate\Http\Response
+ */
     public function update(Request $request, bebidas $bebidas)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\bebidas  $bebidas
-     * @return \Illuminate\Http\Response
-     */
+/**
+ * Remove the specified resource from storage.
+ *
+ * @param  \App\bebidas  $bebidas
+ * @return \Illuminate\Http\Response
+ */
     public function destroy(bebidas $bebidas)
     {
         //

@@ -47,9 +47,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input ''="" 'checked'="" :="" ?="" name="remember" old('remember')="" type="checkbox" {{="" }}="">
-                                            Remember Me
-                                        </input>
+                                        <input name="remember" old('remember')="" type="checkbox">
                                     </label>
                                 </div>
                             </div>
