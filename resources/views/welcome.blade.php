@@ -1,112 +1,62 @@
-<!DOCTYPE doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-            <meta content="IE=edge" http-equiv="X-UA-Compatible">
-                <meta content="width=device-width, initial-scale=1" name="viewport">
-                    <title>
-                        Laravel
-                    </title>
-                    <!-- Fonts -->
-                    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-                        <!-- Styles -->
-                        <style>
-                            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+@extends('layouts.app')
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-                        </style>
-                    </link>
-                </meta>
-            </meta>
-        </meta>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                <a href="{{ url('/home') }}">
-                    Home
-                </a>
-                @else
-                <a href="{{ route('login') }}">
-                    Login
-                </a>
-                <a href="{{ route('register') }}">
-                    Register
-                </a>
-                @endauth
-            </div>
-            @endif
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-                <div class="links">
-                    <a href="https://laravel.com/docs">
-                        Documentation
-                    </a>
-                    <a href="https://laracasts.com">
-                        Laracasts
-                    </a>
-                    <a href="https://laravel-news.com">
-                        News
-                    </a>
-                    <a href="https://forge.laravel.com">
-                        Forge
-                    </a>
-                    <a href="https://github.com/laravel/laravel">
-                        GitHub
-                    </a>
-                </div>
+@section('content')
+<div class="carousel slide carousel-fade alto_carrusel" data-ride="carousel" id="carouselExampleFade">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img alt="First slide" class="d-block w-100" src="https://www.hotelwyndhambogota.com/wp-content/uploads/2016/11/RESTAURANTE_WYNDHAM_BOGOTA_ART.jpg">
+            </img>
+            <div class="carousel-caption d-none d-md-block">
+                <h1 class="text-white">
+                    La tecnologia, en tu restaurante favorito
+                </h1>
+                <p class="text-white">
+                    nombre de la aplicacion gustoso de atenderlos.
+                </p>
             </div>
         </div>
-    </body>
-</html>
+        <div class="carousel-item">
+            <img alt="Second slide" class="d-block w-100" src="https://img.chilango.com/2017/12/robo-en-polanco.jpg">
+            </img>
+            <div class="carousel-caption d-none d-md-block">
+                <h1>
+                    pedir en un restaurante nunca fue tan facil
+                </h1>
+                <p>
+                    desde tu mesa puedes estar en la cocina.
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img alt="Third slide" class="d-block w-100" src="https://www.queremoscomer.rest/processed/img/establecimientos/fotos/354/restaurante-recorte-7884555656.$thumb,1600,1200.jpg">
+            </img>
+            <div class="carousel-caption d-none d-md-block">
+                <h1>
+                    Esperamos disfrutes esta nueva esperiencia
+                </h1>
+                <p>
+                    es un gusto tenerlos como visitantes.
+                </p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" data-slide="prev" href="#carouselExampleFade" role="button">
+        <span aria-hidden="true" class="carousel-control-prev-icon">
+        </span>
+        <span class="sr-only">
+            Previous
+        </span>
+    </a>
+    <a class="carousel-control-next" data-slide="next" href="#carouselExampleFade" role="button">
+        <span aria-hidden="true" class="carousel-control-next-icon">
+        </span>
+        <span class="sr-only">
+            Next
+        </span>
+    </a>
+</div>
+<div class="container">
+    <div class="row">
+    </div>
+</div>
+@endsection
