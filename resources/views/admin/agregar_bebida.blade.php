@@ -7,29 +7,29 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="panel panel-default col-md-8 text-center text-info col-md-offset-2">
+        <div class="panel panel-default col-md-8 text-center text-info all">
             <h3 class="text-info text-center">
                 agregar una bebida al menu
             </h3>
             <hr class="text-info">
                 <br>
                     <br>
-                        <form accept-charset="utf-8" action="{{ url('nueva_bebida') }}" class="col-md-8 col-md-offset-2" method="POST">
+                        <form accept-charset="utf-8" action="{{ url('nueva_bebida') }}" class="col-md-12" method="POST">
                             {{ csrf_field() }}
-                            <label class="col-md-3" for="">
+                            <label class="col-md-3 text-dark">
                                 Nombre
                             </label>
                             <input class="col-md-12 col-md-offset-1 form-control" name="nombre" required="" type="text">
                             </input>
-                            <label class="col-md-3 col-md-offset-0" for="">
+                            <label class="col-md-3 text-dark">
                                 Precio
                             </label>
-                            <input class="col-md-12 col-md-offset-1 form-control" name="precio" required="" type="number">
+                            <input class="col-md-12 col-md-offset-1 form-control" min="0" name="precio" required="" type="number">
                             </input>
                             <div class="col-md-12 col-md-offset-1">
                                 <br>
                                     <br>
-                                        <button class="btn btn-primary" type="submit">
+                                        <button class="btn btn-info col-md-4" type="submit">
                                             guardar
                                         </button>
                                     </br>

@@ -3,61 +3,71 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
+        <div class="col-md-8 col-md-offset-0 all">
+            <div class="panel col-md-12">
+                <div class="panel-heading">
+                    <h1 class="text-info text-center">
+                        Bienvenido
+                    </h1>
+                    <hr>
+                    </hr>
+                </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form action="{{ route('login') }}" class="form-horizontal" method="POST">
                         {{ csrf_field() }}
-
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
+                            <label class="col-md-4 control-label" for="email">
+                                Correo
+                            </label>
+                            <div class="col-md-12">
+                                <input autofocus="" class="form-control" id="email" name="email" required="" type="email" value="{{ old('email') }}">
+                                    @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>
+                                            {{ $errors->first('email') }}
+                                        </strong>
                                     </span>
-                                @endif
+                                    @endif
+                                </input>
                             </div>
                         </div>
-
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
+                            <label class="col-md-4 control-label" for="password">
+                                Password
+                            </label>
+                            <div class="col-md-12">
+                                <input class="form-control" id="password" name="password" required="" type="password">
+                                    @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>
+                                            {{ $errors->first('password') }}
+                                        </strong>
                                     </span>
-                                @endif
+                                    @endif
+                                </input>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
+                            <div class="col-md-12">
+                                <div class="checkbox izquierda">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                        <input name="remember" old('remember')="" type="checkbox">
+                                            Recordar
+                                        </input>
                                     </label>
                                 </div>
+                                <a class="btn btn-link derecha" href="{{ route('password.request') }}">
+                                    Olvide la contraseña?
+                                </a>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
+                            <div class="col-md-12 ">
+                                <br>
+                                    <button class="btn btn-info col-md-8" type="submit">
+                                        Ingresar
+                                    </button>
+                                </br>
                             </div>
                         </div>
                     </form>

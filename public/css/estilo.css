@@ -1,18 +1,48 @@
-h2{
-   text-align: center;
-   font-family: cursive;
+h2 {
+    text-align: center;
+    font-family: cursive;
 }
-
-.all{
-	font-family: cursive;
-	text-align: center;
-	margin-left: 27%;
-	margin-top: 8%;
-	max-height: 50%;
-	max-width: 50%;
-	box-shadow: 0 0 20px #4f9;
+.all {
+    font-family: cursive;
+    text-align: center;
+    margin-left: 18%;
+    margin-top: 8%;
+    max-height: 50%;
+    max-width: 50%;
+    box-shadow: 0 0 20px #4f9;
 }
-
-hr{
-	border-color: black;
+hr {
+    border-color: black;
+}
+.btn-azul {
+    border: none;
+    background: rgba(200, 199, 100);
+    color: green !important;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 15px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+    margin-bottom: 6%;
+}
+.derecha {
+    float: right;
+}
+.izquierda {
+    float: left;
+}
+.alto_carrusel {
+    width: 100%;
+}
+.alto_carrusel img {
+    width: 70%;
+    height: 560px !important;
+}
+.row1 {
+    margin-top: 5%;
+}
+.separar {
+    margin-left: 65px;
+    margin-bottom: 20px;
 }

@@ -44,4 +44,24 @@ class User extends Authenticatable
         // belongsTo(RelatedModel, foreignKey = pedidos_id, keyOnRelatedModel = id)
         return $this->belongsTo(pedidos::class, 'id');
     }
+
+    /**
+     * User belongs to clientes.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    function () {
+        // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
+        return $this->belongsTo(Cliente::class, 'user_id');
+    }
+
+    /**
+     * User belongs to restaurante.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    function () {
+        // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
+        return $this->belongsTo(Restaurante::class, 'user_id');
+    }
 }
