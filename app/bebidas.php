@@ -23,4 +23,14 @@ class bebidas extends Model
     protected $hidden = [
     ];
 
+    /**
+     * bebidas belongs to Pedidos.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function pedidos()
+    {
+        // belongsTo(RelatedModel, foreignKey = pedidos_id, keyOnRelatedModel = id)
+        return $this->belongsTo(pedidos::class, 'id');
+    }
 }

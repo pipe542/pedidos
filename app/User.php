@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\pedidos;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -31,5 +32,16 @@ class User extends Authenticatable
     {
         return User::where('id', '=', $id)->get()->name;
 
+    }
+
+    /**
+     * User belongs to Pedidos.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function pedidos()
+    {
+        // belongsTo(RelatedModel, foreignKey = pedidos_id, keyOnRelatedModel = id)
+        return $this->belongsTo(pedidos::class, 'id');
     }
 }

@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\bebidas;
+use App\platos;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class pedidos extends Model
@@ -23,5 +26,20 @@ class pedidos extends Model
     protected $hidden = [
 
     ];
+
+    public function plato()
+    {
+        return $this->belongsTo(platos::class, 'plato_id');
+    }
+
+    public function bebida()
+    {
+        return $this->belongsTo(bebidas::class, 'bebida_id');
+    }
+
+    public function dueño()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
 }

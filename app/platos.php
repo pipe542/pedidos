@@ -23,4 +23,14 @@ class platos extends Model
     protected $hidden = [
     ];
 
+    /**
+     * platos belongs to Pedi.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function pedidos()
+    {
+        // belongsTo(RelatedModel, foreignKey = pedi_id, keyOnRelatedModel = id)
+        return $this->belongsTo(pedidos::class, 'id');
+    }
 }
