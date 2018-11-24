@@ -17,7 +17,7 @@
                             <br>
                                 <div class="col-md-5 col-md-offset-4 ">
 
-                                    <form action="" method="post">
+                                    
 
                                     <form action="{{ url('nuevo_pedido') }}" method="post">
                                         {{ csrf_field() }}
