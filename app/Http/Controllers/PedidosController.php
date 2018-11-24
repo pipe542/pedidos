@@ -13,7 +13,6 @@ class PedidosController extends Controller
 
     public function todos_pedidos()
     {
-
         $pedidos  = pedidos::all();
         $usuarios = User::all();
         $platos   = platos::all();
