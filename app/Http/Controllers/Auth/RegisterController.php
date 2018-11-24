@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Cliente;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
+use App\Restaurante;
+use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -18,7 +20,7 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
+     */
 
     use RegistersUsers;
 
@@ -48,24 +50,54 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
-     *
+     * protected
+     * function create(array $data)
+    {
+    return User::create([
+    'name' => $data['name'],
+    'email' => $data['email'],
+    'password' => bcrypt($data['password']),
+    ]);
+    }
      * @param  array  $data
      * @return \App\User
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        $user = null;
+        $rol  = $data['tipo'];
+        try {
+
+            $user = User::create([
+                'name'     => $data['name'],
+                'email'    => $data['email'],
+                'password' => bcrypt($data['password']),
+                'tipo'     => $rol,
+            ]);
+
+            if ($rol === 'cliente') {
+                Cliente::create([
+                    'mesa'    => $data['mesa'],
+                    'user_id' => $user->id,
+                ]);
+            } elseif ($rol === 'restaurante') {
+                Restaurante::create([
+                    'mesas'   => $data['mesas'],
+                    'user_id' => $user->id,
+                ]);
+            }
+
+        } catch (Exception $e) {
+
+        }
+        return $user;
     }
 }

@@ -6,10 +6,10 @@
         <div class="col-md-8 col-md-offset-2 all">
             <div class="panel panel-default col-md-12">
                 <div class="panel-heading">
-                    <a class="btn btn-success" href="{{ url('register') }}">
+                    <a class="btn btn-danger" href="{{ url('register') }}">
                         Cliente
                     </a>
-                    <a class="btn btn-danger" href="{{ url('register1') }}">
+                    <a class="btn btn-success" href="{{ url('register1') }}">
                         Restaurante
                     </a>
                     <h1 class="text-info">
@@ -55,10 +55,10 @@
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="mesa">
-                                Número de mesa
+                                mesas en el local
                             </label>
                             <div class="col-md-12">
-                                <input class="form-control" id="mesa" min="0" name="mesa" required="" type="number" value="{{ old('mesa') }}">
+                                <input class="form-control" id="mesas" min="0" name="mesas" required="" type="number" value="{{ old('mesas') }}">
                                 </input>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                                 </input>
                             </div>
                         </div>
-                        <input name="tipo" type="hidden" value="cliente"/>
+                        <input name="tipo" type="hidden" value="restaurante"/>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <button class="btn btn-info col-md-12" type="submit">

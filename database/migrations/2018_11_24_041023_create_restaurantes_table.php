@@ -16,10 +16,9 @@ class CreateRestaurantesTable extends Migration
         Schema::create('restaurantes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('mesas');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreign('user_id', 'restaurantes_user_id_fk')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

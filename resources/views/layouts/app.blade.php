@@ -21,7 +21,7 @@
     </head>
     <body>
         <div>
-            <nav class="nav nav-static-top bg-success">
+            <nav class="nav nav-static-top bg-info">
                 <div class="container">
                     <div class="nav-header ">
                         <!-- Branding Image -->
@@ -47,11 +47,14 @@
                             </a>
                         </li>
                         @else
+                        @if (Auth::user()->tipo === 'cliente')
                         <li class="nav-item">
                             <a class="btn-azul nav-link" href="{{ url('pedidos') }}">
                                 Hacer pedido
                             </a>
                         </li>
+                        @endif
+                        @if (Auth::user()->tipo === 'restaurante')
                         <li class="nav-item">
                             <a class="btn-azul nav-link" href="{{ url('ver') }}">
                                 ver pedidos
@@ -76,6 +79,7 @@
                                 </li>
                             </ul>
                         </li>
+                        @endif
                         <li class="dropdown">
                             <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle btn-azul nav-link" data-toggle="dropdown" href="#" role="button" v-pre="">
                                 {{ Auth::user()->name }}

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
-    use Notifiable;
 
     /*
      * The attributes that are mass assignable.
@@ -14,7 +13,7 @@ class Cliente extends Model
      * @var array
      */
     protected $fillable = [
-        'mesa',
+        'mesa', 'user_id',
     ];
 
     /**

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurante extends Model
 {
-    use Notifiable;
 
     /*
      * The attributes that are mass assignable.
@@ -14,7 +13,7 @@ class Restaurante extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'mesas', 'user_id',
     ];
 
     /**
@@ -23,14 +22,7 @@ class Restaurante extends Model
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
     ];
-
-    public function usuario($id)
-    {
-        return User::where('id', '=', $id)->get()->name;
-
-    }
 
     /**
      * User belongs to Pedidos.

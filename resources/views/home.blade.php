@@ -4,7 +4,7 @@
 <div class="carousel slide carousel-fade alto_carrusel" data-ride="carousel" id="carouselExampleFade">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img alt="First slide" class="d-block w-100" src="https://www.hotelwyndhambogota.com/wp-content/uploads/2016/11/RESTAURANTE_WYNDHAM_BOGOTA_ART.jpg">
+            <img alt="First slide" class="d-block w-100" src="https://media-cdn.tripadvisor.com/media/photo-s/0f/a6/76/0a/restaurante.jpg">
             </img>
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="text-white">
