@@ -15,7 +15,7 @@ class pedidos extends Model
      * @var array
      */
     protected $fillable = [
-        'plato_id', 'bebida_id', 'user_id',
+        'plato_id', 'bebida_id', 'user_id', 'restaurante_id',
     ];
 
     /**

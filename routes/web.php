@@ -20,9 +20,18 @@ Route::get('/nueva', 'BebidasController@create');
 Route::post('/nueva_bebida', 'BebidasController@store');
 Route::get('/nuevo', 'PlatosController@create');
 Route::post('/nuevo_plato', 'PlatosController@store');
-Route::get('pedidos', 'PedidosController@index');
+Route::post('pedidos', 'PedidosController@index');
 Route::post('/nuevo_pedido', 'PedidosController@store');
-Route::get('ver', 'PedidosController@todos_pedidos');
+Route::post('ver', 'PedidosController@pedidos');
+Route::get('restaurantes', 'RestauranteController@index');
 Route::get('register1', function () {
     return view('auth.registrar_restaurante');
+});
+
+Route::get('register_prueba', function () {
+    return view('formulario_persona');
+});
+
+Route::get('empresa', function () {
+    return view('empresa');
 });

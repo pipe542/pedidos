@@ -11,13 +11,13 @@ use Illuminate\Http\Request;
 class PedidosController extends Controller
 {
 
-    public function todos_pedidos()
+    public function pedidos(Request $request)
     {
-        $pedidos  = pedidos::all();
-        $usuarios = User::all();
-        $platos   = platos::all();
-        $bebidas  = bebidas::all();
-        return view('admin.ver_pedidos', compact('pedidos', 'usuarios', 'platos', 'bebidas'));
+        $data    = $request->all();
+        $id      = $request->user()->id;
+        $pedidos = pedidos::where('restaurante_id', '=', $id)->get();
+        $hay     = pedidos::where('restaurante_id', '=', $id)->count();
+        return view('admin.ver_pedidos', compact('pedidos', 'hay'));
 
     }
 
@@ -26,10 +26,12 @@ class PedidosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $platos  = platos::all();
-        $bebidas = bebidas::all();
+        $data    = $request->all();
+        $id      = $request->id_restaurante;
+        $platos  = platos::where('restaurante_id', '=', $id)->get();
+        $bebidas = bebidas::where('restaurante_id', '=', $id)->get();
         return view('user.pedidos', compact('platos', 'bebidas'));
 
     }

@@ -12,7 +12,7 @@ class bebidas extends Model
      * @var array
      */
     protected $fillable = [
-        'nombre', 'precio',
+        'nombre', 'precio', 'estado', 'restaurante_id',
     ];
 
     /**
@@ -32,5 +32,16 @@ class bebidas extends Model
     {
         // belongsTo(RelatedModel, foreignKey = pedidos_id, keyOnRelatedModel = id)
         return $this->belongsTo(pedidos::class, 'id');
+    }
+
+    /**
+     * bebidas belongs to Resta.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function restaurante()
+    {
+        // belongsTo(RelatedModel, foreignKey = resta_id, keyOnRelatedModel = id)
+        return $this->belongsTo(restaurante::class, 'restaurante_id');
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\bebidas;
+use App\platos;
 use Illuminate\Database\Eloquent\Model;
 
 class Restaurante extends Model
@@ -33,5 +35,27 @@ class Restaurante extends Model
     {
         // belongsTo(RelatedModel, foreignKey = pedidos_id, keyOnRelatedModel = id)
         return $this->belongsTo(User::class, 'id');
+    }
+
+    /**
+     * Restaurante belongs to Platos.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function platos()
+    {
+        // belongsTo(RelatedModel, foreignKey = platos_id, keyOnRelatedModel = id)
+        return $this->belongsTo(platos::class, 'user_id');
+    }
+
+    /**
+     * Restaurante belongs to Bebidas.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function bebidas()
+    {
+        // belongsTo(RelatedModel, foreignKey = bebidas_id, keyOnRelatedModel = id)
+        return $this->belongsTo(bebidas::class, 'user_id');
     }
 }

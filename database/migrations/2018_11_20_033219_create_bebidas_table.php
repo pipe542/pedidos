@@ -17,7 +17,12 @@ class CreateBebidasTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->integer('precio');
+            $table->string('estado');
+            $table->integer('restaurante_id')->unsigned();
             $table->timestamps();
+            $table->foreign('restaurante_id', 'bebidas_restaurante_id_foreign')->references('user_id')->on('restaurantes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

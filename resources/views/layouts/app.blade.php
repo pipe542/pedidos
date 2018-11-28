@@ -49,17 +49,21 @@
                         @else
                         @if (Auth::user()->tipo === 'cliente')
                         <li class="nav-item">
-                            <a class="btn-azul nav-link" href="{{ url('pedidos') }}">
+                            <a class="btn-azul nav-link" href="{{ url('restaurantes') }}">
                                 Hacer pedido
                             </a>
                         </li>
                         @endif
                         @if (Auth::user()->tipo === 'restaurante')
-                        <li class="nav-item">
-                            <a class="btn-azul nav-link" href="{{ url('ver') }}">
-                                ver pedidos
-                            </a>
-                        </li>
+                        <form accept-charset="utf-8" action="{{ url('ver') }}" method="POST">
+                            {{ csrf_field() }}
+                            <li class="nav-item">
+                                <button class=" btn-azul nav-link" type="submit">
+                                    ver pedidos
+                                </button>
+                                <input name="id" type="hidden" value="{{ Auth::user()->id }}"/>
+                            </li>
+                        </form>
                         <li class="dropdown ">
                             <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle btn-azul nav-link" data-toggle="dropdown" href="#" role="button" v-pre="">
                                 agregar menu

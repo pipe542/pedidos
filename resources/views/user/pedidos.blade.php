@@ -28,8 +28,13 @@
                                     <option value="{{ $plato->id }}">
                                         {{ $plato->nombre }}
                                     </option>
+                                    @php
+                                         {{$id=$plato->restaurante_id;}}
+                                     @endphp
                                     @endforeach
                                 </select>
+                                <input name="restaurante_id" type="hidden" value="{{$id}}">
+                                </input>
                                 <br>
                                 </br>
                                 <label class="col-md-2">

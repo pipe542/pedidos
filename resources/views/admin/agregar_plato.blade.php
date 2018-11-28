@@ -26,15 +26,17 @@
                             </label>
                             <input class="col-md-12 col-md-offset-1 form-control" min="0" name="precio" required="" type="number">
                             </input>
-                            <div class="col-md-12 col-md-offset-1">
-                                <br>
+                            <input name="estado" type="hidden" value="inactivo">
+                                <div class="col-md-12 col-md-offset-1">
                                     <br>
-                                        <button class="btn btn-info col-md-4" type="submit">
-                                            guardar
-                                        </button>
+                                        <br>
+                                            <button class="btn btn-info col-md-4" type="submit">
+                                                guardar
+                                            </button>
+                                        </br>
                                     </br>
-                                </br>
-                            </div>
+                                </div>
+                            </input>
                         </form>
                     </br>
                 </br>

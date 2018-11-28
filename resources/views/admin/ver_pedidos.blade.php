@@ -7,6 +7,19 @@
 @section('content')
 <div class="container">
     <div class="row row1">
+        @if ($hay=='0')
+        <div class="card bg-dark text-white all col-md-8">
+            <img alt="Card image" class="card-img" src="http://bonvivant.es/wp-content/uploads/2012/11/restaurante-barcelona-hd1.jpg">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">
+                        Aun no tienes pedidos pendientes
+                    </h5>
+                    <p class="card-text">
+                    </p>
+                </div>
+            </img>
+        </div>
+        @endif
         @foreach ($pedidos as $pedido)
         <div class="col-md-3 col-md-offset-1 separar">
             <div class="card panel panel-default" style="width: 18rem;">

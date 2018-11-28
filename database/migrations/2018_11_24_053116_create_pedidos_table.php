@@ -18,6 +18,7 @@ class CreatePedidosTable extends Migration
             $table->integer('plato_id')->unsigned();
             $table->integer('bebida_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            $table->integer('restaurante_id')->unsigned();
 
             //relacion
             $table->timestamps();
@@ -28,6 +29,9 @@ class CreatePedidosTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('plato_id')->references('id')->on('platos')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('restaurante_id')->references('user_id')->on('restaurantes')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

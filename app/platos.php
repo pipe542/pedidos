@@ -12,7 +12,7 @@ class platos extends Model
      * @var array
      */
     protected $fillable = [
-        'nombre', 'precio',
+        'nombre', 'precio', 'estado', 'restaurante_id',
     ];
 
     /**
@@ -32,5 +32,16 @@ class platos extends Model
     {
         // belongsTo(RelatedModel, foreignKey = pedi_id, keyOnRelatedModel = id)
         return $this->belongsTo(pedidos::class, 'id');
+    }
+
+    /**
+     * platos belongs to Res.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function restaurante()
+    {
+        // belongsTo(RelatedModel, foreignKey = res_id, keyOnRelatedModel = id)
+        return $this->belongsTo(Restaurante::class, 'restaurante_id');
     }
 }
